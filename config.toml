@@ -1,0 +1,24 @@
+# The URL the site will be built for
+base_url = "https://catkinkitkat.github.io"
+title = "CatKinKitKat Blog"
+description = "Backend war stories and infrastructure notes from a not-normal engineer."
+default_language = "en"
+theme = "anemone"
+
+taxonomies = [
+    { name = "tags" }
+]
+
+[extra]
+author = "CatKinKitKat"
+enable_search = true
+list_pages = true
+favicon = "favicon.ico"
+
+# Anemone navigation configuration
+header_nav = [
+    { url = "/", name_en = "Home" },
+    { url = "/engineering", name_en = "Engineering" },
+    { url = "/blog", name_en = "Blog" },
+    { url = "/about", name_en = "About" }
+]
