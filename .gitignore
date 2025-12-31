@@ -1,0 +1,17 @@
+# Zola output
+public/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Miscellaneous
+writing_style_profile.md
+SESSION_EXPORT.md
