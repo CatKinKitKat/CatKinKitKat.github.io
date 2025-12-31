@@ -1,0 +1,22 @@
+# The URL the site will be built for
+base_url = "https://catkinkitkat.github.io"
+title = "CatKinKitKat"
+description = "MECC/MEC2 student at IPBeja. Former Java backend developer. Researcher."
+default_language = "en"
+theme = "anemone"
+
+taxonomies = [
+    { name = "tags" }
+]
+
+[extra]
+author = "CatKinKitKat"
+enable_search = false
+list_pages = true
+favicon = "favicon.ico"
+
+# Anemone navigation configuration
+header_nav = [
+    { url = "/", name_en = "Home" },
+    { url = "/research", name_en = "Research" },
+]

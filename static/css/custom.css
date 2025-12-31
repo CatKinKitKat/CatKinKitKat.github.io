@@ -1,0 +1,72 @@
+/* Custom styles for CatKinKitKat site */
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+/* Homepage specific */
+.posts {
+    list-style: none;
+    padding: 0;
+}
+
+.posts li {
+    margin-bottom: 0.5rem;
+}
+
+.posts a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.posts a:hover {
+    color: var(--accent);
+}
+
+.posts .date {
+    color: var(--muted);
+    font-size: 0.875rem;
+    margin-left: 1rem;
+}
+
+/* Research section */
+.content-listing-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.content-listing-item:last-child {
+    border-bottom: none;
+}
+
+.content-listing-item h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+}
+
+.content-listing-item .date {
+    color: var(--muted);
+    font-size: 0.875rem;
+}
+
+.content-listing-item .summary {
+    margin-top: 0.5rem;
+    color: var(--text);
+}
