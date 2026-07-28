@@ -122,7 +122,7 @@ java -XX:CRaCCheckpointTo=checkpoint-dir -jar myapp.jar
 java -XX:CRaCRestoreFrom=checkpoint-dir
 ```
 
-Restore times are typically under 100ms. That's not a typo. The JVM doesn't bootstrap; it just restores state from disk.
+Restore times are typically under 100ms. That's not a typo. The JVM doesn't bootstrap. It just restores state from disk.
 
 The catch: you need to handle resource cleanup properly. Open file handles, network connections, and random number generators all need to be refreshed after restore. Spring Boot 3.2+ has built-in CRaC support that handles most of this automatically, but custom resources (database connection pools, Kafka consumers) need attention.
 
@@ -134,7 +134,7 @@ The key insight: a lot of work the JVM does at startup is the same every time. C
 
 As of early 2026, Leyden's "premain" optimization is available in early-access JDK builds. It records startup decisions (which classes to load, which methods to compile) and replays them on subsequent starts. Early benchmarks show 30-50% startup improvement without code changes.
 
-This is complementary to CRaC. CRaC snapshots the entire application state; Leyden optimizes the JVM's own startup overhead. Combining both should yield the fastest possible startup times.
+This is complementary to CRaC. CRaC snapshots the entire application state. Leyden optimizes the JVM's own startup overhead. Combining both should yield the fastest possible startup times.
 
 ## GraalVM Native Image
 

@@ -13,7 +13,7 @@ I've gone from writing bespoke producer/consumer applications for every database
 
 Kafka Connect runs as a cluster of worker nodes. You deploy connectors to the cluster via a REST API. Each connector is either a *source* (reads from an external system, writes to Kafka) or a *sink* (reads from Kafka, writes to an external system).
 
-Workers distribute connector tasks across the cluster. If a worker dies, its tasks get rebalanced to surviving workers. The framework handles offset tracking, error handling, and retries. You configure the connector; Kafka Connect does the plumbing.
+Workers distribute connector tasks across the cluster. If a worker dies, its tasks get rebalanced to surviving workers. The framework handles offset tracking, error handling, and retries. You configure the connector. Kafka Connect does the plumbing.
 
 There are two deployment modes:
 

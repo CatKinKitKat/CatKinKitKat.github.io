@@ -94,7 +94,7 @@ List<Order> findNextPage(
 );
 ```
 
-The WHERE clause is the key. It implements the row-value comparison `(created_at, id) < (?, ?)`. I break it into individual comparisons because JPQL doesn't support tuple comparison syntax. Some databases (PostgreSQL) support it natively in SQL; if you're using native queries, use it.
+The WHERE clause is the key. It implements the row-value comparison `(created_at, id) < (?, ?)`. I break it into individual comparisons because JPQL doesn't support tuple comparison syntax. Some databases (PostgreSQL) support it natively in SQL. If you're using native queries, use it.
 
 ### The Controller
 

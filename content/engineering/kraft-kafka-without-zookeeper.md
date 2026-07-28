@@ -13,7 +13,7 @@ With Kafka 4.0, ZooKeeper support is officially gone. KRaft (Kafka Raft) is the 
 
 KRaft replaces ZooKeeper with an internal Raft-based consensus protocol for managing Kafka's metadata. Instead of storing partition assignments, broker registrations, and topic configurations in an external ZooKeeper ensemble, Kafka now manages all of this internally using a set of controller nodes.
 
-The controller quorum is a group of Kafka brokers (or dedicated controller nodes) that participate in Raft consensus. One of them is the active controller; the others are hot standbys. Metadata is stored in an internal topic (`__cluster_metadata`) and replicated via Raft. When the active controller fails, a standby takes over almost instantly.
+The controller quorum is a group of Kafka brokers (or dedicated controller nodes) that participate in Raft consensus. One of them is the active controller. The others are hot standbys. Metadata is stored in an internal topic (`__cluster_metadata`) and replicated via Raft. When the active controller fails, a standby takes over almost instantly.
 
 The key insight: Kafka no longer has a split-brain dependency. The thing managing Kafka's metadata *is* Kafka. One operational surface instead of two.
 

@@ -175,7 +175,7 @@ The golden rule: every migration must be backward-compatible with the previous v
 - **Removing a column?** First deploy code that doesn't use the column, then remove it in a later migration.
 - **Renaming a column?** Add the new column, migrate data, deploy code that uses the new column, then drop the old column. Three steps minimum.
 
-This approach works with both Flyway and Liquibase. The tool doesn't matter; the migration strategy does.
+This approach works with both Flyway and Liquibase. The tool doesn't matter. The migration strategy does.
 
 ## Schema Validation
 

@@ -25,14 +25,14 @@ Before touching any code, I spend time understanding what each service actually 
 
 ### 2. Strangler Fig Pattern
 
-You don't replace a monolith in one go. You wrap it. New requests go to the new Spring Boot service; old requests keep hitting WebLogic until you've verified parity. The strangler fig pattern isn't exciting, but it works and it lets you sleep at night.
+You don't replace a monolith in one go. You wrap it. New requests go to the new Spring Boot service. Old requests keep hitting WebLogic until you've verified parity. The strangler fig pattern isn't exciting, but it works and it lets you sleep at night.
 
 ### 3. EJB to REST (or Messaging)
 
 Most of the inter-service communication in these old systems is EJB remoting or JMS queues through WebLogic's built-in broker. The migration path depends on the communication pattern:
 
 - **Request/response** - becomes a REST endpoint or gRPC service. Spring Boot handles this trivially.
-- **Fire-and-forget** - moves to Kafka or Solace. This is usually the cleanest migration because the producer and consumer are already decoupled; you're just swapping the transport.
+- **Fire-and-forget** - moves to Kafka or Solace. This is usually the cleanest migration because the producer and consumer are already decoupled. You're just swapping the transport.
 - **The weird ones** - EJB timers, MDBs with complex selectors, anything that leans on WebLogic-specific features. These require actual thought and usually some refactoring.
 
 ### 4. Test Against Production Data

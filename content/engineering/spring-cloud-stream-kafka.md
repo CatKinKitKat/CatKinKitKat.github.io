@@ -48,7 +48,7 @@ The naming convention (`functionName-in-0`, `functionName-out-0`) is one of thos
 
 The functional model is genuinely elegant for consume-transform-produce pipelines. No `@KafkaListener` annotations, no `KafkaTemplate` injection, no manual offset management. Just functions.
 
-For simple transformations, this reduces boilerplate significantly. You focus on the business logic; the framework handles the plumbing.
+For simple transformations, this reduces boilerplate significantly. You focus on the business logic. The framework handles the plumbing.
 
 ### Binder Portability
 

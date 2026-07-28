@@ -158,7 +158,7 @@ Unit tests verify your logic. Integration tests verify your infrastructure. Cont
 
 ### Pact for Async Messaging
 
-Pact supports asynchronous messaging contracts. The producer side defines what messages it produces; the consumer side defines what messages it expects.
+Pact supports asynchronous messaging contracts. The producer side defines what messages it produces. The consumer side defines what messages it expects.
 
 **Consumer side (defines the expectation):**
 

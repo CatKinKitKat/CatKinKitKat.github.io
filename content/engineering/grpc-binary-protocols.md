@@ -93,7 +93,7 @@ message ListOrdersResponse {
 }
 ```
 
-The `protoc` compiler generates client stubs and server interfaces. You implement the server interface; clients use the generated stub. No manual HTTP client code, no URL construction, no JSON parsing.
+The `protoc` compiler generates client stubs and server interfaces. You implement the server interface. Clients use the generated stub. No manual HTTP client code, no URL construction, no JSON parsing.
 
 ## Spring Boot gRPC
 
@@ -212,7 +212,7 @@ A service mesh solves this by doing request-level (L7) load balancing. Each gRPC
 
 **Polyglot environments**: a `.proto` file generates correct clients for Java, Go, Python, TypeScript, and more. Better than hoping everyone implements the same REST API correctly.
 
-**When you need streaming**: server-push, bidirectional communication, real-time updates. gRPC handles this natively; REST requires WebSocket bolt-ons.
+**When you need streaming**: server-push, bidirectional communication, real-time updates. gRPC handles this natively. REST requires WebSocket bolt-ons.
 
 ## When REST Wins
 

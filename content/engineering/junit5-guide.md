@@ -36,7 +36,7 @@ void emptyOrderShouldThrow() {
 }
 ```
 
-`@DisplayName` is optional but I use it everywhere. Test method names are for code, display names are for humans reading test reports. `void emptyOrderShouldThrow` is fine for a developer; "Creating an order with no items should throw" is better in a CI report.
+`@DisplayName` is optional but I use it everywhere. Test method names are for code, display names are for humans reading test reports. `void emptyOrderShouldThrow` is fine for a developer. "Creating an order with no items should throw" is better in a CI report.
 
 ## Lifecycle: @BeforeEach vs @BeforeAll
 

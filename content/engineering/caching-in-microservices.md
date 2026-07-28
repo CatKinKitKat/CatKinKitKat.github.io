@@ -257,7 +257,7 @@ LoadingCache<String, Product> cache = Caffeine.newBuilder()
     .build(key -> productRepository.findById(key).orElse(null));
 ```
 
-**Caching masks real problems.** The database query takes 3 seconds? Just cache it! Now nobody notices (or fixes) the missing index until the cache goes down and suddenly everything is slow. I've seen this pattern repeatedly. Fix the root cause first; cache second.
+**Caching masks real problems.** The database query takes 3 seconds? Just cache it! Now nobody notices (or fixes) the missing index until the cache goes down and suddenly everything is slow. I've seen this pattern repeatedly. Fix the root cause first. Cache second.
 
 **Memory pressure.** Unbounded caches grow until they crash your application. Always set maximum sizes. Always monitor cache hit rates and memory usage. A cache with a 10% hit rate is just wasting memory.
 

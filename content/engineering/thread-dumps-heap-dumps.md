@@ -27,7 +27,7 @@ kill -3 <pid>
 kubectl exec <pod> - jcmd 1 Thread.print > thread_dump.txt
 ```
 
-Always take at least three dumps, 5-10 seconds apart. A single dump is a photograph; three dumps are a video. Threads that appear in the same state across all three dumps are stuck, not just momentarily busy.
+Always take at least three dumps, 5-10 seconds apart. A single dump is a photograph. Three dumps are a video. Threads that appear in the same state across all three dumps are stuck, not just momentarily busy.
 
 ## Reading Thread Dumps
 

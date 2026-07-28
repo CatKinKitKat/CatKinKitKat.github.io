@@ -52,7 +52,7 @@ If your code uses JAXB (and if you're coming from Java 8 enterprise code, it pro
 
 ### The var Keyword (Java 10)
 
-`var` for local variables. It's not dynamic typing; it's local type inference. The type is still checked at compile time.
+`var` for local variables. It's not dynamic typing. It's local type inference. The type is still checked at compile time.
 
 ```java
 var orders = orderRepository.findAll();  // List<Order>
@@ -77,11 +77,11 @@ String sql = """
     """;
 ```
 
-No more string concatenation for multi-line SQL, JSON, or XML. The indentation is handled by the compiler; trailing whitespace is stripped based on the closing `"""` position.
+No more string concatenation for multi-line SQL, JSON, or XML. The indentation is handled by the compiler. Trailing whitespace is stripped based on the closing `"""` position.
 
 ### Sealed Classes (Java 17)
 
-Covered in another post, but the migration impact is minimal. It's purely additive; no existing code breaks.
+Covered in another post, but the migration impact is minimal. It's purely additive. No existing code breaks.
 
 ### Records (Java 16)
 
@@ -161,6 +161,6 @@ Use preview features in side projects and experiments. Wait for finalization bef
 
 ## The Honest Truth
 
-Java 8 to 21 is a significant migration. Budget weeks, not days. The code changes are usually the easy part; it's the dependency hell, the obscure reflection warnings, and the one library that hasn't released a Java 17-compatible version that burns your time.
+Java 8 to 21 is a significant migration. Budget weeks, not days. The code changes are usually the easy part. It's the dependency hell, the obscure reflection warnings, and the one library that hasn't released a Java 17-compatible version that burns your time.
 
 But Java 21 is genuinely worth it. The language features, the performance improvements, the GC improvements (ZGC, Shenandoah), and virtual threads make it the best version of Java ever shipped. The migration pain is temporary. The benefits are permanent.

@@ -30,7 +30,7 @@ pipeline {
 }
 ```
 
-All the actual logic lives in scripts and tools, not in the pipeline definition. The pipeline orchestrates; it doesn't implement.
+All the actual logic lives in scripts and tools, not in the pipeline definition. The pipeline orchestrates. It doesn't implement.
 
 ### Fail Fast, Fail Loud
 

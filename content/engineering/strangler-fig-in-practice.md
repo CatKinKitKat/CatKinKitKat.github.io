@@ -11,7 +11,7 @@ I mentioned the strangler fig pattern in my [WebLogic migration post](@/engineer
 
 A strangler fig is a tree that grows around another tree, eventually replacing it entirely. The old tree doesn't get cut down - it gets gradually absorbed. Same principle for legacy systems.
 
-Instead of rewriting the legacy system from scratch (which fails spectacularly more often than anyone admits), you build new functionality alongside it. New requests go to the new system; old requests keep hitting the legacy system. Over time, you migrate functionality until the legacy system handles nothing and can be decommissioned.
+Instead of rewriting the legacy system from scratch (which fails spectacularly more often than anyone admits), you build new functionality alongside it. New requests go to the new system. Old requests keep hitting the legacy system. Over time, you migrate functionality until the legacy system handles nothing and can be decommissioned.
 
 ## The Proxy Layer
 

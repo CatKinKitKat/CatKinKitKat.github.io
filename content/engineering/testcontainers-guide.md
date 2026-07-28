@@ -89,7 +89,7 @@ void shouldProcessOrderMessage() {
 }
 ```
 
-The `await()` from Awaitility is essential here. Kafka consumers are asynchronous; you can't just assert immediately after sending a message. I've seen people add `Thread.sleep(5000)` instead. Don't be that person.
+The `await()` from Awaitility is essential here. Kafka consumers are asynchronous. You can't just assert immediately after sending a message. I've seen people add `Thread.sleep(5000)` instead. Don't be that person.
 
 ## Spring Boot Development Mode with Testcontainers
 
@@ -149,7 +149,7 @@ static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16"
 
 With `testcontainers.reuse.enable=true` in your `~/.testcontainers.properties`, the container persists between test runs. First run takes 5 seconds to start Postgres. Subsequent runs reuse the existing container. Huge time saver during development.
 
-The trade-off: your test data accumulates. Use `@Sql` annotations or a `@BeforeEach` that truncates tables. Or use `@Transactional` on your test methods to roll back after each test. The container stays warm; the data stays clean.
+The trade-off: your test data accumulates. Use `@Sql` annotations or a `@BeforeEach` that truncates tables. Or use `@Transactional` on your test methods to roll back after each test. The container stays warm. The data stays clean.
 
 ## Testing Microservices: The Tool Belt
 

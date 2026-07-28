@@ -135,7 +135,7 @@ The most common mistake I see (and made myself): modeling events as "EntityCreat
 The difference matters because "OrderShipped" carries semantic meaning that enables downstream consumers to react appropriately, while "OrderUpdated" requires every consumer to parse the payload and figure out what changed.
 
 ### Consistency: Embrace the Aggregate Boundary
-Events within a single aggregate are strongly consistent; the version-based optimistic concurrency ensures it. Events across aggregates are eventually consistent. Trying to make cross-aggregate operations transactional defeats the purpose of event sourcing and leads to distributed transaction nightmares.
+Events within a single aggregate are strongly consistent. The version-based optimistic concurrency ensures it. Events across aggregates are eventually consistent. Trying to make cross-aggregate operations transactional defeats the purpose of event sourcing and leads to distributed transaction nightmares.
 
 ## The Projectionist (Read Side)
 If your business operation spans multiple aggregates, use a saga or process manager. Accept that the operation isn't atomic and design for compensating actions when things go wrong.

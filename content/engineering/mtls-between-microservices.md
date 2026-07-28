@@ -164,7 +164,7 @@ spring:
             certificate: /certs/ca.crt
 ```
 
-When the certificate files change (cert-manager updates the secret, which updates the mounted volume), Spring Boot detects the change and reloads the SSL context. No restart required. Active connections continue with the old certificate; new connections use the new one.
+When the certificate files change (cert-manager updates the secret, which updates the mounted volume), Spring Boot detects the change and reloads the SSL context. No restart required. Active connections continue with the old certificate. New connections use the new one.
 
 This was a pain point for years. Before this feature, you had to either restart the pod on certificate rotation (ugly), use a sidecar proxy like Envoy (complex), or write custom reload logic (error-prone). Now it's a configuration property.
 

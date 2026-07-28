@@ -35,7 +35,7 @@ Customer customer = customerClient.getCustomer(order.getCustomerId());
 Product product = productClient.getProduct(order.getProductId());
 ```
 
-I've watched teams spend months building saga orchestrators to replicate what a database transaction gives you for free. That's not engineering; that's self-inflicted complexity.
+I've watched teams spend months building saga orchestrators to replicate what a database transaction gives you for free. That's not engineering. That's self-inflicted complexity.
 
 ## The "Calling Your Services" Problem
 

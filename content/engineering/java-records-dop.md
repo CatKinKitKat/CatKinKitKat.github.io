@@ -112,7 +112,7 @@ public class Pricing {
 The DOP version is easier to test, easier to extend, and doesn't force pricing logic into the Order type. When you have five different ways to calculate a total depending on context, the OOP approach collapses into a mess of method overloads or strategy objects. The DOP approach is just... functions.
 
 ## When Records Are Wrong
-Records are not entities. They don't have identity beyond their component values. Two records with the same components are equal; period. If you need mutable state, lifecycle hooks, or JPA identity: records are not your tool.
+Records are not entities. They don't have identity beyond their component values. Two records with the same components are equal. Period. If you need mutable state, lifecycle hooks, or JPA identity: records are not your tool.
 
 ## The Design Philosophy
 I've seen people try to use records as JPA entities. Don't. Hibernate needs a no-arg constructor, mutable fields for dirty checking, and proxy support. Records provide none of that. Use records for DTOs, value objects, API responses, and event payloads. Use regular classes for entities.

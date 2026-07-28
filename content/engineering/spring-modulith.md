@@ -127,7 +127,7 @@ public class ShippingPreparationHandler {
 
 ## Transaction-Aware Event Publication
 
-Here's where Spring Modulith gets really clever. By default, Spring application events are synchronous; the listener runs in the same thread and transaction as the publisher. If the listener fails, the publisher's transaction rolls back. That's often not what you want.
+Here's where Spring Modulith gets really clever. By default, Spring application events are synchronous. The listener runs in the same thread and transaction as the publisher. If the listener fails, the publisher's transaction rolls back. That's often not what you want.
 
 Spring Modulith provides `@ApplicationModuleListener` which, combined with the event publication registry, gives you reliable asynchronous event delivery:
 

@@ -11,7 +11,7 @@ I've used Zuul, Spring Cloud Gateway, Kong, and plain Nginx for this. Spring Clo
 
 ## The Evolution from Zuul
 
-Netflix Zuul 1 was a servlet-based gateway. Blocking I/O, one thread per request. It worked fine until it didn't; under high concurrency, the thread pool would saturate and the gateway became the bottleneck. A gateway that's slower than the services behind it defeats the purpose.
+Netflix Zuul 1 was a servlet-based gateway. Blocking I/O, one thread per request. It worked fine until it didn't. Under high concurrency, the thread pool would saturate and the gateway became the bottleneck. A gateway that's slower than the services behind it defeats the purpose.
 
 Zuul 2 fixed the blocking I/O problem but never got proper Spring Cloud integration. The Spring team built Spring Cloud Gateway from scratch on top of Project Reactor and Netty. Non-blocking, reactive, and designed for high throughput.
 
@@ -269,4 +269,4 @@ The gateway is a critical path component. Every request goes through it. That me
 3. Scale it independently. When traffic spikes, the gateway needs to handle the load before the services even see it.
 4. Test your rate limiting and circuit breakers. Under load, not just with unit tests.
 
-And one more thing: resist the temptation to put too much in the gateway. I've seen gateways that transform payloads, aggregate responses from multiple services, and implement business rules. That's not a gateway anymore; it's a BFF (Backend for Frontend) pretending to be a gateway. If you need a BFF, build a BFF. Keep the gateway focused on routing and cross-cutting concerns.
+And one more thing: resist the temptation to put too much in the gateway. I've seen gateways that transform payloads, aggregate responses from multiple services, and implement business rules. That's not a gateway anymore. It's a BFF (Backend for Frontend) pretending to be a gateway. If you need a BFF, build a BFF. Keep the gateway focused on routing and cross-cutting concerns.

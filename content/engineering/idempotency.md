@@ -199,7 +199,7 @@ public class IdempotencyAspect {
 
 ## The Bottom Line
 
-In a distributed system, duplicate requests are not a possibility; they're a certainty. Design for them from the start, not as an afterthought when a customer reports they were charged three times.
+In a distributed system, duplicate requests are not a possibility. They're a certainty. Design for them from the start, not as an afterthought when a customer reports they were charged three times.
 
 Idempotency keys for APIs. Deduplication tables for message consumers. Natural idempotency where you can achieve it through design. And when in doubt, choose consistency over availability for operations with real-world consequences.
 

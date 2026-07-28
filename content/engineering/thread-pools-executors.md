@@ -109,7 +109,7 @@ The queue type matters more than most people realize:
 
 **`LinkedBlockingQueue`** - optionally bounded, backed by linked nodes. Higher throughput than `ArrayBlockingQueue` under contention because it uses separate locks for put and take operations. Use with explicit capacity.
 
-**`SynchronousQueue`** - zero capacity. Every put blocks until a take, and vice versa. Used by `Executors.newCachedThreadPool()`. Tasks are handed directly to threads without queuing. This forces the pool to create new threads when all existing threads are busy. Good for short-lived tasks; dangerous for long-lived ones (thread count can explode).
+**`SynchronousQueue`** - zero capacity. Every put blocks until a take, and vice versa. Used by `Executors.newCachedThreadPool()`. Tasks are handed directly to threads without queuing. This forces the pool to create new threads when all existing threads are busy. Good for short-lived tasks. Dangerous for long-lived ones (thread count can explode).
 
 **`PriorityBlockingQueue`** - unbounded priority queue. Tasks are dequeued by priority, not FIFO. Useful for task schedulers, but unbounded means you're back to the "grows forever" problem.
 

@@ -151,7 +151,7 @@ But in a microservices architecture with multiple resource servers, sessions bec
 
 - **Session sharing** - if the user hits Service A and then Service B, both need access to the session. You need a shared session store (Redis, database). Now you have a centralized dependency.
 - **Statelessness** - JWTs are self-contained. The resource server validates the token without calling anyone. With sessions, every request needs a session lookup.
-- **Cross-service authorization** - a JWT can carry scopes and roles that multiple services can read. A session ID carries no information; every service needs to look it up.
+- **Cross-service authorization** - a JWT can carry scopes and roles that multiple services can read. A session ID carries no information. Every service needs to look it up.
 
 My take: for frontend-to-backend auth in a monolith, sessions are fine. For service-to-service auth in microservices, JWTs are the right tool. For frontend-to-backend in a microservices architecture, use the Backend for Frontend pattern - the BFF keeps sessions, and uses JWTs internally.
 

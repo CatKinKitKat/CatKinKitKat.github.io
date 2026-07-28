@@ -70,7 +70,7 @@ Protobuf's field-number approach is arguably more forgiving for schema evolution
 
 Let's talk numbers. In our benchmarks (Java, typical order-processing messages of 200-500 bytes):
 
-- **Serialization speed:** Protobuf is 2-3x faster than Avro for serialization. Protobuf's generated code is highly optimized; Avro's reflection-based approach (even with specific record classes) has more overhead.
+- **Serialization speed:** Protobuf is 2-3x faster than Avro for serialization. Protobuf's generated code is highly optimized. Avro's reflection-based approach (even with specific record classes) has more overhead.
 - **Deserialization speed:** Similar story. Protobuf's generated deserializer is faster.
 - **Payload size:** Roughly comparable. Avro is sometimes slightly smaller because it doesn't include field tags in the payload (the schema handles field identification). Protobuf includes varint-encoded field numbers. The difference is typically 5-15% and rarely matters in practice.
 - **Schema resolution overhead:** Avro pays a cost for schema resolution at deserialization time (looking up the writer schema from the registry, resolving it against the reader schema). Protobuf doesn't have this overhead.
